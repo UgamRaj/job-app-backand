@@ -55,7 +55,7 @@ const editJob = async (req, res) => {
 
 const deleteJob = async (req, res) => {
   try {
-    await jobModel.findByIdAndDelete(req.body)._id;
+    await jobModel.findByIdAndDelete(req.body._id);
     res.json({
       success: true,
       message: "Job deleted successfully",
