@@ -28,6 +28,7 @@ const getJob = async (req, res) => {
   res.json({
     sucess: true,
     message: "Dummy job get API",
+    result: jobList,
   });
 };
 
@@ -48,7 +49,7 @@ const editJob = async (req, res) => {
   console.log("🚀 ~ editJob ~ updatedJobRecord:", updatedJobRecord);
   res.json({
     sucess: true,
-    message: "job Edited sucessfully",
+    message: "Job edited successfully",
   });
 };
 
@@ -57,7 +58,7 @@ const deleteJob = async (req, res) => {
     await jobModel.findByIdAndDelete(req.body)._id;
     res.json({
       success: true,
-      message: "job deleted successfully",
+      message: "Job deleted successfully",
     });
   } catch (error) {
     console.log(error);
